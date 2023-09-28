@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <header>
-        <h1>The Real Beauty is in the Inside</h1>
-    </header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Button</title>
+    <title>Your Page Title</title>
     <style>
+        /* Add your CSS styles here if needed */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
         }
 
-        #container {
-            position: relative;
+        header {
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .responsive-image {
+            max-width: 50%; /* Make the image smaller */
+            height: auto;
+            border: 2px solid #3498db; /* Add a border to the image */
+            border-radius: 5px; /* Add border radius */
         }
 
         .moveButton {
@@ -30,40 +44,38 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: top 1s, left 1s;
+            transition: background-color 0.3s; /* Add a smooth transition */
         }
 
-        .moveButton.moving {
-            top: 100px;
-            left: 100px;
-            background-color: #e74c3c;
+        .moveButton:hover {
+            background-color: #e74c3c; /* Change button color on hover */
         }
     </style>
-
 </head>
 <body>
-    <body>
+    <header>
+        <h1>The Real Beauty is in the Inside</h1>
+    </header>
 
-    <div id="container">
-        <button class="moveButton">Click Me!</button>
+    <div class="image-container">
+        <img class="responsive-image" src="https://i.redd.it/where-real-beauty-lies-v0-2cgsas0a98bb1.png?s=9e560506fdc3a0d2b3b8a2a7ed67177d78d32d89" alt="Real Beauty Image">
     </div>
-    
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="moveButton" onclick="moveButton()">Click Me!</button>
+    </div>
+
     <script>
-        const buttons = document.querySelectorAll('.moveButton');
-        
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.add('moving');
-                setTimeout(() => {
-                    button.classList.remove('moving');
-                }, 1000); 
-                
-            });
-        });
+        function moveButton() {
+            const button = document.querySelector('.moveButton');
+            button.style.transform = 'translate(100px, 100px)';
+            setTimeout(() => {
+                button.style.transform = 'none';
+            }, 1000); // Reset the button's position after 1 second
+        }
     </script>
-    <!-----/user.txt ----->
+
+    <!-- user.txt -->
+
 </body>
 </html>
