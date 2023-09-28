@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <header>
+        <h1>The Real Beauty is in the Inside</h1>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        .moveButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: top 1s, left 1s;
+        }
+
+        .moveButton.moving {
+            top: 100px;
+            left: 100px;
+            background-color: #e74c3c;
+        }
+    </style>
+
+</head>
+<body>
+    <body>
+
+    <div id="container">
+        <button class="moveButton">Click Me!</button>
+    </div>
+    
+    <script>
+        const buttons = document.querySelectorAll('.moveButton');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('moving');
+                setTimeout(() => {
+                    button.classList.remove('moving');
+                }, 1000); 
+                
+            });
+        });
+    </script>
+    <!-----/user.txt ----->
+</body>
+</html>
